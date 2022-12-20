@@ -58,3 +58,35 @@ if (event.target.value === 'gen-1') {
 //displeyCard(generationI)
 //<div class= "cardsContainer"> ${element.type} ${element.weaknesses}// 
   //${element.special-attack} ${element.next-evolution}</div>//
+
+  const gen = document.getElementById('gen')
+  gen.addEventListener('click' , (event) => {
+    if (event.target.value === 'gen1') {
+      displeyCard(generacionI)
+    } else if (event.target.value === 'gen2') {
+      displeyCard(generationII)
+    }else{
+      displeyCard(dataPokemon)
+    }
+    });
+
+    const gen1 =document.getElementById('gen1')
+    gen1.addEventListener('click' , (event) => {
+      if (event.target.value === 'gen1') {
+        displeyCard(generationI) 
+      }else if (event.target.value === 'gen2') {
+        displeyCard(generationII)
+      }else {
+        displeyCard(dataPokemon)
+      }
+    });
+    const gen2 =document.getElementById('gen2')
+    gen2.addEventListener('click' , (event) => {
+      if (event.target.value === 'gen1') {
+        displeyCard(generationI) 
+      }else if (event.target.value === 'gen2') {
+        displeyCard(generationII)
+      }else {
+        displeyCard(dataPokemon)
+      }
+    });
