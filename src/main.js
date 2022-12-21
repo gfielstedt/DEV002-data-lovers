@@ -11,13 +11,30 @@ const dataPokemon = data.pokemon
 const displeyCard = (d) => {
     cardsContainer.innerHTML = `<div class="cardvacia"></div> `;
   d.forEach(element => {
+    // console.log(element);
     const cardPokemon = document.createElement("div")
-    cardPokemon.innerHTML += ` <section class= "flex-cont"> <section class= "flex-box">
+    cardPokemon.innerHTML += `
+     <section class= "flex-cont"> 
+     <a  href="#${element.num}">
+      <section class= "flex-box">
         <p>${element.num}</p>
         <img src ="${element.img}">
         <p>${element.name}</p>
-        </section>
-        </section>
+      </section>
+      </a>
+      </section>
+    
+      <section id="${element.num}" class="modalDialog">
+      <section>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>XXX</h2>
+        <h3>${element.num}</h3>
+        <article>${element.about}</article>
+        <h4>Generation num : ${element.generation.num}</h4>
+     
+       
+      </section>
+     </section>
         `
     cardsContainer.appendChild(cardPokemon);
   })

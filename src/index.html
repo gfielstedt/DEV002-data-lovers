@@ -20,11 +20,6 @@
 
     <ul class="menu">
       <li id="inicio"><a href="#"><span class="material-symbols-outlined">home</span>Inicio</a></li>
-      <li id="gen"><a href="#"><span class="material-symbols-outlined">pets</span>Generación I y II</a></li>
-      <li id="gen1"><a href="#"><span class="material-symbols-outlined">pets</span>Generación I</a></li>
-      <li id="gen2"><a href="#"><span class="material-symbols-outlined">pets</span>Generación II</a></li>
-      <li id="ordenar-a-z"><a href="#"><span class="material-symbols-outlined">sort_by_alpha</span>Ordenar a-z</a></li>
-      <li id="ordenar-z-a"><a href="#"><span class="material-symbols-outlined">swap_vert</span>Ordenar z-a</a></li>
       <li id="estadisticas"><a href="#"><span class="material-symbols-outlined">insights</span>Estadísticas</a></li>
     </ul>
 
@@ -33,6 +28,12 @@
     
  <header>
   <nav>
+    <div class="nav-1">
+      <select name="ordenar" id="select-order">
+        <option value="orderA-z" >Ordenar A-Z></option> 
+        <option value="orderZ-a" >Ordenar Z-A </option> 
+      </select>
+    </div>
        <div class="nav-2">
         <select id="select-generation">
           <option value="gen" >Generation I & II</option> 
