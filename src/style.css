@@ -27,7 +27,6 @@
     display: block;
     transition: all .8s;
     width: 100%;
-   
   }
   .menu a:hover{
     margin-left: 2em;
@@ -45,11 +44,6 @@
 
   }
   
-  /*.cardvacia {
-    width: 190px;
-    height: 190px;
-  } */
-  
    .flex-cont {
     width: 75vw;
     max-width: 1000px;
@@ -61,6 +55,8 @@
     width: 220px;
     flex-wrap:wrap;  
     justify-content:right;
+    transition: all 0.25s;
+  
   }
   
   .flex-box {
@@ -72,6 +68,8 @@
     flex-wrap:wrap;
     justify-content:right;
     margin-bottom: 30px;
+    transition: all 0.25s;
+    
   }
   
   .cardsContainer{
@@ -82,11 +80,23 @@
     width: 100%;
     margin: auto;
     overflow: hidden;
+    transition: all 0.25s;
+  }
+
+  .cardsContainer :hover{
+    transform: translateX(-5px);
+  
   }
   
    #img {
     width: 100vw;
     height: 7vw;
+   }
+   #select-order {
+    border-radius: 15px;
+    padding: 16px 32px; 
+    font-size: 16px;
+    margin: 4px 2px;
    }
 
    #select-generation {
@@ -96,7 +106,7 @@
     margin: 4px 2px;
    }
 
-   button {
+   .button  {
     border-radius: 15px;
     color: white;
     padding: 16px 32px;
@@ -115,40 +125,44 @@
       flex-direction: column;
      }
     .nav-1{
-      /*display: flex;
-      justify-content: flex-start;*/
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
       width: 18%;
      }
      #select-order{
+      width: 130px;
+     }
+
+     #select-order{
       font-size: 10px;
       padding: 10px 15px;
      }
-     #select-generation{
-      width: 130px;}
+
+    }
      .nav-2{
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
       width: 18%;
      }
+
+     #select-generation{
+      width: 130px;
+    }
      #select-generation{
       font-size: 10px;
       padding: 10px 15px;
      }
-     #select-generation{
-      width: 130px;
-     }
-    }
+  
+    
 
     /* START MODAL */
 
   /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  position:absolute; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
@@ -159,7 +173,7 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .modalDialog {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
@@ -173,21 +187,23 @@
   pointer-events: none;
 }
 .modalDialog:target {
-  opacity:1;
+  opacity:2;
   pointer-events: auto;
 }
 .modalDialog > section {
-  max-width: 800px;
+  max-width: 400px;
   width: 90%;
   position: relative;
   margin: 10% auto;
   padding: 20px;
-  border-radius: 3px;
-  background: #fff;
+  border-radius: 50px;
+  background: lightgrey;
+  text-align: center;
 }
+
 .close {
   font-family: Arial, Helvetica, sans-serif;
-  background: #f26d7d;
+  background:red;
   color: #fff;
   line-height: 25px;
   position: absolute;
@@ -207,6 +223,8 @@
   padding-top: 5px;
 }
 .close:hover {
-  background: #fa3f6f;
+  background: red;
 }
+
+
    /* END MODAL */

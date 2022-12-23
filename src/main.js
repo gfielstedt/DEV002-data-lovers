@@ -1,17 +1,16 @@
 import {
   example
 } from './data.js';
-// import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-console.log("example esto es la data", data);
+//console.log("example esto es la data", data);//
+
 //mostrar
 const cardsContainer = document.getElementById("cardsContainer")
 const dataPokemon = data.pokemon
 const displeyCard = (d) => {
     cardsContainer.innerHTML = `<div class="cardvacia"></div> `;
   d.forEach(element => {
-    // console.log(element);
+    //console.log(element);
     const cardPokemon = document.createElement("div")
     cardPokemon.innerHTML += `
      <section class= "flex-cont"> 
@@ -27,14 +26,17 @@ const displeyCard = (d) => {
       <section id="${element.num}" class="modalDialog">
       <section>
         <a href="#close" title="Close" class="close">X</a>
-        <h2>XXX</h2>
+        <h2>${element.name}</h2>
         <h3>${element.num}</h3>
-        <article>${element.about}</article>
+        <img src ="${element.img}">
+        <h4>Pokemon Type : ${element.type}</h4>
         <h4>Generation num : ${element.generation.num}</h4>
+        <h4>Weaknesses : ${element.weaknesses}</h4>
+        <article><h4>About Pokemon :</h4> ${element.about}</article>
      
        
       </section>
-     </section>
+      </section>
         `
     cardsContainer.appendChild(cardPokemon);
   })
@@ -52,15 +54,6 @@ let generationII = dataPokemon.filter ((dataPokemon) => {
 
 const buttonGenerationI = document.getElementById("Generation I")
 
-/* const buttonGenerationI = document.getElementById("Generation I")
-buttonGenerationI.addEventListener('click',()=> {
-    displeyCard(generationI)
-})
-const buttonGenerationII = document.getElementById("Generation II")
-buttonGenerationII.addEventListener('click',()=> {
-    displeyCard(generationII)
-}) */
-
 const selectGeneration = document.getElementById('select-generation')
 selectGeneration.addEventListener('change', (event) => {
 if (event.target.value === 'gen-1') {
@@ -72,38 +65,22 @@ if (event.target.value === 'gen-1') {
 }
 })
 
-//displeyCard(generationI)
-//<div class= "cardsContainer"> ${element.type} ${element.weaknesses}// 
-  //${element.special-attack} ${element.next-evolution}</div>//
+//order
 
-  const gen = document.getElementById('gen')
-  gen.addEventListener('click' , (event) => {
-    if (event.target.value === 'gen1') {
-      displeyCard(generacionI)
-    } else if (event.target.value === 'gen2') {
-      displeyCard(generationII)
-    }else{
-      displeyCard(dataPokemon)
-    }
-    });
+document.getElementById("select-order").addEventListener("change", function(event) {
+console.log(event.target.value)
+ console.log(dataPokemon)
+})
 
-    const gen1 =document.getElementById('gen1')
-    gen1.addEventListener('click' , (event) => {
-      if (event.target.value === 'gen1') {
-        displeyCard(generationI) 
-      }else if (event.target.value === 'gen2') {
-        displeyCard(generationII)
-      }else {
-        displeyCard(dataPokemon)
-      }
-    });
-    const gen2 =document.getElementById('gen2')
-    gen2.addEventListener('click' , (event) => {
-      if (event.target.value === 'gen1') {
-        displeyCard(generationI) 
-      }else if (event.target.value === 'gen2') {
-        displeyCard(generationII)
-      }else {
-        displeyCard(dataPokemon)
-      }
-    });
+
+let ejemplo = [{id:1, nombre:"a"}, {id:2, nombre:"c"}, {id:3, nombre:"b"}]
+
+console.log(ejemplo.sort( (a,b)=>{ 
+  if(a.nombre > b.nombre){
+    return 1
+  }
+  if(a.nombre < b.nombre){
+    return -1
+  }
+  return 0
+} ))
