@@ -67,15 +67,34 @@ if (event.target.value === 'gen-1') {
 
 //order
 
-document.getElementById("select-order").addEventListener("change", function(event) {
+/*const selectOrder = document.getElementById("select-order") 
+selectOrder.addEventListener("change", (event) => {
+dataPokemon.sort( (a,b) => {
+ if(a) 
+}
+)
 console.log(event.target.value)
- console.log(dataPokemon)
-})
+ //console.log(dataPokemon)
+})*/
+
+const misPokemon = (dataPokemon)
+misPokemon.sort( (a, b) => {
+if (a.name > b.name) {
+  return 1;
+}
+if (a.name < b.name){
+  return -1;
+}
+return 0;
+
+});
+
+console.log(misPokemon)
 
 
-let ejemplo = [{id:1, nombre:"a"}, {id:2, nombre:"c"}, {id:3, nombre:"b"}]
+//let ejemplo = [{id:1, nombre:"a"}, {id:2, nombre:"c"}, {id:3, nombre:"b"}]
 
-console.log(ejemplo.sort( (a,b)=>{ 
+/*console.log(ejemplo.sort( (a,b)=>{ 
   if(a.nombre > b.nombre){
     return 1
   }
@@ -83,4 +102,4 @@ console.log(ejemplo.sort( (a,b)=>{
     return -1
   }
   return 0
-} ))
+} ))*/
