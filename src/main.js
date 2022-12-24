@@ -1,6 +1,4 @@
-import {
-  example
-} from './data.js';
+
 import data from './data/pokemon/pokemon.js';
 //console.log("example esto es la data", data);//
 
@@ -8,7 +6,7 @@ import data from './data/pokemon/pokemon.js';
 const cardsContainer = document.getElementById("cardsContainer")
 const dataPokemon = data.pokemon
 const displeyCard = (d) => {
-    cardsContainer.innerHTML = `<div class="cardvacia"></div> `;
+  cardsContainer.innerHTML = `<div class="cardvacia"></div> `;
   d.forEach(element => {
     //console.log(element);
     const cardPokemon = document.createElement("div")
@@ -41,14 +39,18 @@ const displeyCard = (d) => {
     cardsContainer.appendChild(cardPokemon);
   })
 }
- displeyCard(dataPokemon)
+displeyCard(dataPokemon)
 
- //filter
-let generationI = dataPokemon.filter ((dataPokemon) => {
-    return dataPokemon.num <= 151;
+
+
+
+
+//filter
+let generationI = dataPokemon.filter((dataPokemon) => {
+  return dataPokemon.num <= 151;
 });
-let generationII = dataPokemon.filter ((dataPokemon) => {
-      return dataPokemon.num > 151;
+let generationII = dataPokemon.filter((dataPokemon) => {
+  return dataPokemon.num > 151;
 });
 
 
@@ -56,13 +58,13 @@ const buttonGenerationI = document.getElementById("Generation I")
 
 const selectGeneration = document.getElementById('select-generation')
 selectGeneration.addEventListener('change', (event) => {
-if (event.target.value === 'gen-1') {
-  displeyCard(generationI)
-} else if (event.target.value === 'gen-2') {
-  displeyCard(generationII)
-} else {
-  displeyCard(dataPokemon)
-}
+  if (event.target.value === 'gen-1') {
+    displeyCard(generationI)
+  } else if (event.target.value === 'gen-2') {
+    displeyCard(generationII)
+  } else {
+    displeyCard(dataPokemon)
+  }
 })
 
 //order
@@ -77,19 +79,19 @@ console.log(event.target.value)
  //console.log(dataPokemon)
 })*/
 
-const misPokemon = (dataPokemon)
-misPokemon.sort( (a, b) => {
-if (a.name > b.name) {
-  return 1;
-}
-if (a.name < b.name){
-  return -1;
-}
-return 0;
+/*const misPokemon = (dataPokemon)
+misPokemon.sort((a, b) => {
+  if (a.name > b.name) {
+    return 1;
+  }
+  if (a.name < b.name) {
+    return -1;
+  }
+  return 0;
 
-});
+});*/
 
-console.log(misPokemon)
+//console.log(misPokemon)
 
 
 //let ejemplo = [{id:1, nombre:"a"}, {id:2, nombre:"c"}, {id:3, nombre:"b"}]
