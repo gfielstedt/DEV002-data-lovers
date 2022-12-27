@@ -1,5 +1,6 @@
 
 import data from './data/pokemon/pokemon.js';
+import { filterData, sortData } from './data.js';
 //console.log("example esto es la data", data);//
 
 //mostrar
@@ -42,66 +43,24 @@ const displeyCard = (d) => {
 displeyCard(dataPokemon)
 
 
-
-
-
-//filter
-let generationI = dataPokemon.filter((dataPokemon) => {
-  return dataPokemon.num <= 151;
-});
-let generationII = dataPokemon.filter((dataPokemon) => {
-  return dataPokemon.num > 151;
-});
-
-
-const buttonGenerationI = document.getElementById("Generation I")
-
 const selectGeneration = document.getElementById('select-generation')
 selectGeneration.addEventListener('change', (event) => {
-  if (event.target.value === 'gen-1') {
-    displeyCard(generationI)
-  } else if (event.target.value === 'gen-2') {
-    displeyCard(generationII)
-  } else {
-    displeyCard(dataPokemon)
-  }
+const data=filterData(dataPokemon , selectGeneration.value)
+displeyCard(data)
+
 })
 
-//order
 
-/*const selectOrder = document.getElementById("select-order") 
-selectOrder.addEventListener("change", (event) => {
-dataPokemon.sort( (a,b) => {
- if(a) 
-}
-)
-console.log(event.target.value)
- //console.log(dataPokemon)
-})*/
+const selectOrder = document.getElementById("select-order");
+selectOrder.addEventListener ("change", (event) => {
+const ordenData = sortData(dataPokemon,"name", selectOrder.value)
+displeyCard(ordenData)
 
-/*const misPokemon = (dataPokemon)
-misPokemon.sort((a, b) => {
-  if (a.name > b.name) {
-    return 1;
-  }
-  if (a.name < b.name) {
-    return -1;
-  }
-  return 0;
-
-});*/
-
-//console.log(misPokemon)
+});
 
 
-//let ejemplo = [{id:1, nombre:"a"}, {id:2, nombre:"c"}, {id:3, nombre:"b"}]
 
-/*console.log(ejemplo.sort( (a,b)=>{ 
-  if(a.nombre > b.nombre){
-    return 1
-  }
-  if(a.nombre < b.nombre){
-    return -1
-  }
-  return 0
-} ))*/
+
+
+
+

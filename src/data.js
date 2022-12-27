@@ -1,26 +1,36 @@
-/**
- * TODO: JSDoc
- * @param {array} data 
- * @param {string} sortBy 
- * @param {string} sortOrder being ASC or DESC
- * @returns retrurns the array sorted
- */
+//filter
+
+export const filterData = (data,condition) => {
+  if (condition== "gen-1") {
+    return data.filter((data) => {
+      return data.num <= 151;
+    });
+  }
+  if( condition=="gen-2"){
+    return data.filter((data) => {
+      return data.num > 151;
+    });
+  }
+  return data
+};
 
 //order
+
 export const sortData = (data, sortBy, sortOrder) => {
   return data.sort((a, b) => {
     if (a[sortBy] > b[sortBy]) {
-      if(sortOrder == 'ASC')
+      if(sortOrder == "ASC")
       {
         return 1;
       }
       else {
         return -1;
       }
+
     }
 
     if (a[sortBy] < b[sortBy]) {
-      if(sortOrder == 'ASC')
+      if(sortOrder == "ASC")
       {
         return -1;
       }
@@ -30,9 +40,6 @@ export const sortData = (data, sortBy, sortOrder) => {
     }
     return 0;
   });
-};
-console.log(data)
 
-/*export const anotherExample = () => {
-  return 'OMG';
-};*/
+};
+
