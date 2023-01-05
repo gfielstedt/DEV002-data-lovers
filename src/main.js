@@ -1,6 +1,6 @@
 
 import data from './data/pokemon/pokemon.js';
-import { filterData, sortData } from './data.js';
+import { filterData, sortData, filterType } from './data.js';
 //console.log("example esto es la data", data);//
 
 //mostrar
@@ -58,8 +58,18 @@ displeyCard(ordenData)
 
 });
 
-
-
+//compute
+const computeStats = (poke) => {
+const totalDePokemon = poke.length
+const totalPokeAgua = ((filterType("water",poke ).length * 100) / totalDePokemon).toFixed(2)
+  
+  console.log(totalDePokemon)
+  
+  
+  
+    console.log(totalPokeAgua)
+  }
+  computeStats (dataPokemon)
 
 
 
