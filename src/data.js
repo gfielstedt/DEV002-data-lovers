@@ -53,7 +53,7 @@ export const filterType = (type, data) =>{
   const x = data.filter(element => element.type == type)
   return x
   }
-   const computeStats = (poke) => {
+   /*const computeStats = (poke) => {
 const totalDePokemon = poke.length
 const totalPokeAgua = filterType("water",poke ).length
 
@@ -61,8 +61,8 @@ console.log(totalDePokemon)
 
 
 
-  console.log(totalPokeAgua)
-}
+  console.log(totalPokeAgua)*/
+
 
 
 

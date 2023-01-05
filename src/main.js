@@ -61,15 +61,44 @@ displeyCard(ordenData)
 //compute
 const computeStats = (poke) => {
 const totalDePokemon = poke.length
-const totalPokeAgua = ((filterType("water",poke ).length * 100) / totalDePokemon).toFixed(2)
-  
-  console.log(totalDePokemon)
-  
-  
-  
-    console.log(totalPokeAgua)
-  }
-  computeStats (dataPokemon)
+const totalPokeAgua = ((filterType("water",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeTierra = ((filterType("ground",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeRoca = ((filterType("rock",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeAcero = ((filterType("steel",poke ).length * 100) / totalDePokemon).toFixed(4);
+const totalPokeFuego = ((filterType("fire",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeElectrico = ((filterType("electric",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeHielo = ((filterType("ice",poke ).length * 100) / totalDePokemon).toFixed(4);
+const totalPokeHierba = ((filterType("grass",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeVenenoso = ((filterType("poison",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeSiniestro = ((filterType("dark",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokePsiquico = ((filterType("psychic",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeFnatasma = ((filterType("ghost",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeLucha = ((filterType("fighting",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeNormal = ((filterType("normal",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeBicho = ((filterType("bug",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeVolador = ((filterType("flying",poke ).length * 100) / totalDePokemon).toFixed(4);
+const totalPokeHada = ((filterType("fairy",poke ).length * 100) / totalDePokemon).toFixed(2);
+
+console.log("aquiTierra",totalPokeTierra)
+console.log("aquiAgua",totalPokeAgua)
+console.log("aquiRoca",totalPokeRoca)
+console.log("aquiSteel",totalPokeAcero)
+console.log("aquiFire",totalPokeFuego)
+console.log("aquiElectric",totalPokeElectrico)
+console.log("aquiIce",totalPokeHielo)
+console.log("aquiGrass",totalPokeHierba)
+console.log("aquiPoison",totalPokeVenenoso)
+console.log("aquiDark",totalPokeSiniestro)
+console.log("aquiPsychic",totalPokePsiquico)
+console.log("aquiGhost",totalPokeFnatasma)
+console.log("aquiFighting",totalPokeLucha)
+console.log("aquiNormal",totalPokeNormal)
+console.log("aquiBug",totalPokeBicho)
+console.log("aquiFlying",totalPokeVolador)
+console.log("aquiFairy",totalPokeHada)
+}
+
+computeStats (dataPokemon)
 
 
 
