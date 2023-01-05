@@ -32,6 +32,9 @@
     flex-wrap: wrap;
     justify-content: right;
     margin-bottom: 30px;
+    border-bottom-color: aqua;
+    border-bottom-style: groove;
+    border-collapse: collapse;
   }
 
   .cardsContainer {
@@ -183,8 +186,12 @@
       margin: 10% auto;
       padding: 20px;
       border-radius: 50px;
-      background: lightgrey;
+      background: white;
       text-align: center;
+      border-bottom-color: aqua;
+      border-bottom-style: groove;
+      border-collapse: collapse;
+     
     }
 
     .close {
