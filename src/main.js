@@ -1,6 +1,10 @@
 
 import data from './data/pokemon/pokemon.js';
-import { filterData, sortData, computeStats } from './data.js';
+import {
+  filterData,
+  sortData,
+  computeStats
+} from './data.js';
 //console.log("example esto es la data", data);//
 
 //mostrar
@@ -45,30 +49,27 @@ displeyCard(dataPokemon)
 //selectGeneration
 const selectGeneration = document.getElementById('select-generation')
 selectGeneration.addEventListener('change', (event) => {
-const data=filterData(dataPokemon , selectGeneration.value)
-displeyCard(data)
+  const data = filterData(dataPokemon, selectGeneration.value)
+  displeyCard(data)
 
 })
 
 //selectOrder
 const selectOrder = document.getElementById("select-order");
-selectOrder.addEventListener ("change", (event) => {
-const ordenData = sortData(dataPokemon,"name", selectOrder.value)
-displeyCard(ordenData)
+selectOrder.addEventListener("change", (event) => {
+  const ordenData = sortData(dataPokemon, "name", selectOrder.value)
+  displeyCard(ordenData)
 
 });
 
 //tableListPercent
 const tableListPercent = document.getElementById("tableListPercent");
 const displayPercent = (data) => {
-tableListPercent.innerHTML = ` `;
-const tablePercent = document.createElement("table")
-const arrayType = ["water", "dark","ground"]
+  tableListPercent.innerHTML = ` `;
+  const tablePercent = document.createElement("table");
 
+  tablePercent.innerHTML += `
 
-
-
-tablePercent.innerHTML += `
 <tr class="tablePercent">
 <th>tipo</th>
 <th>porcentaje</th>
@@ -76,19 +77,100 @@ tablePercent.innerHTML += `
 
 <tr>
         <td>Agua</td>
-        <td>${computeStats("water",data)}</td>
+        <td>${computeStats("water",data)}%</td>
+</tr>
+
+<tr>
+        <td>Tierra</td>
+        <td>${computeStats("ground",data)}%</td>
+</tr>
+
+<tr>
+        <td>Roca</td>
+        <td>${computeStats("rock",data)}%</td>
+</tr>
+
+<tr>
+        <td>Acero</td>
+        <td>${computeStats("steel",data)}%</td>
+</tr>
+
+<tr>
+        <td>Fuego</td>
+        <td>${computeStats("fire",data)}%</td>
+</tr>
+
+<tr>
+        <td>Electrico</td>
+        <td>${computeStats("electric",data)}%</td>
+</tr>
+
+<tr>
+        <td>Hielo</td>
+        <td>${computeStats("ice",data)}%</td>
+</tr>
+
+<tr>
+        <td>Hierba</td>
+        <td>${computeStats("grass",data)}%</td>
+</tr>
+
+<tr>
+        <td>Venenoso</td>
+        <td>${computeStats("poison",data)}%</td>
+</tr>
+
+<tr>
+        <td>Siniestro</td>
+        <td>${computeStats("dark",data)}%</td>
+</tr>
+
+<tr>
+        <td>Psiquico</td>
+        <td>${computeStats("psychic",data)}%</td>
+</tr>
+
+<tr>
+        <td>Fantasma</td>
+        <td>${computeStats("ghost",data)}%</td>
+</tr>
+
+<tr>
+        <td>Lucha</td>
+        <td>${computeStats("fighting",data)}%</td>
+</tr>
+
+<tr>
+        <td>Normal</td>
+        <td>${computeStats("normal",data)}%</td>
+</tr>
+
+<tr>
+        <td>bicho</td>
+        <td>${computeStats("bug",data)}%</td>
+</tr>
+
+<tr>
+        <td>Volador</td>
+        <td>${computeStats("flying",data)}%</td>
+</tr>
+
+
+<tr>
+        <td>Dragón</td>
+        <td>${computeStats("dragon",data)}%</td>
 </tr>
 
 `
-tableListPercent.appendChild(tablePercent)
-console.log(data)
+  tableListPercent.appendChild(tablePercent)
+  console.log(data)
 }
 
 displayPercent(dataPokemon)
 
 
 
-  
+
 
 
 //compute
@@ -137,7 +219,3 @@ console.log("aquiDragon",totalPokeDragon)
 
 
 computeStats (dataPokemon)*/
-
-
-
-
