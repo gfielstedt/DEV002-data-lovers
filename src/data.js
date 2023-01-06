@@ -49,9 +49,14 @@ export const sortData = (data, sortBy, sortOrder) => {
 
 //saber cuantas pelotas hay en una piscina
 //data.lenght
-export const filterType = (type, data) =>{
-  const x = data.filter(element => element.type == type)
-  return x
+export const computeStats = (type, data) =>{
+  const x = data.filter(element => element.type.includes(type))
+  console.log("ahora",x)
+  console.log("aqui",((x.length* 100) / data.length).toFixed(2))
+  console.log("ahora aqui",data.length)
+  return ((x.length* 100) / data.length).toFixed(2)
+
+
   }
    /*const computeStats = (poke) => {
 const totalDePokemon = poke.length

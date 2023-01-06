@@ -1,6 +1,6 @@
 
 import data from './data/pokemon/pokemon.js';
-import { filterData, sortData, filterType } from './data.js';
+import { filterData, sortData, computeStats } from './data.js';
 //console.log("example esto es la data", data);//
 
 //mostrar
@@ -42,7 +42,7 @@ const displeyCard = (d) => {
 }
 displeyCard(dataPokemon)
 
-
+//selectGeneration
 const selectGeneration = document.getElementById('select-generation')
 selectGeneration.addEventListener('change', (event) => {
 const data=filterData(dataPokemon , selectGeneration.value)
@@ -50,7 +50,7 @@ displeyCard(data)
 
 })
 
-
+//selectOrder
 const selectOrder = document.getElementById("select-order");
 selectOrder.addEventListener ("change", (event) => {
 const ordenData = sortData(dataPokemon,"name", selectOrder.value)
@@ -58,21 +58,41 @@ displeyCard(ordenData)
 
 });
 
-const displayList = document.getElementById("tablaListaPorcentaje")
-  tablaListaPorcentaje = document.createElement("table")
-;
-const displayEstadistica = ()=> {
-  displayList.innerHTML = ` `;
+//tableListPercent
+const tableListPercent = document.getElementById("tableListPercent");
+const displayPercent = (data) => {
+tableListPercent.innerHTML = ` `;
+const tablePercent = document.createElement("table")
+const arrayType = ["water", "dark","ground"]
 
 
-};
+
+
+tablePercent.innerHTML += `
+<tr class="tablePercent">
+<th>tipo</th>
+<th>porcentaje</th>
+</tr>
+
+<tr>
+        <td>Agua</td>
+        <td>${computeStats("water",data)}</td>
+</tr>
+
+`
+tableListPercent.appendChild(tablePercent)
+console.log(data)
+}
+
+displayPercent(dataPokemon)
+
 
 
   
 
 
 //compute
-const computeStats = (poke) => {
+/*const computeStats = (poke) => {
 const totalDePokemon = poke.length
 const totalPokeAgua = ((filterType("water",poke ).length * 100) / totalDePokemon).toFixed(2);
 const totalPokeTierra = ((filterType("ground",poke ).length * 100) / totalDePokemon).toFixed(2);
@@ -116,7 +136,7 @@ console.log("aquiDragon",totalPokeDragon)
 
 
 
-computeStats (dataPokemon)
+computeStats (dataPokemon)*/
 
 
 
