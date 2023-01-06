@@ -63,6 +63,7 @@ selectOrder.addEventListener("change", (event) => {
 });
 
 //tableListPercent
+
 const tableListPercent = document.getElementById("tableListPercent");
 const displayPercent = (data) => {
   tableListPercent.innerHTML = ` `;
@@ -163,10 +164,16 @@ const displayPercent = (data) => {
 
 `
   tableListPercent.appendChild(tablePercent)
-  console.log(data)
 }
 
+const buttonStatistic = document.getElementById("statistic");
+buttonStatistic.addEventListener("click", () => {
+  cardsContainer.innerHTML= "" ;
 displayPercent(dataPokemon)
+})
+
+
+
 
 
 

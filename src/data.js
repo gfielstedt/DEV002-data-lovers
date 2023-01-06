@@ -47,37 +47,8 @@ export const sortData = (data, sortBy, sortOrder) => {
 
 //compute 
 
-//saber cuantas pelotas hay en una piscina
-//data.lenght
 export const computeStats = (type, data) =>{
   const x = data.filter(element => element.type.includes(type))
-  console.log("ahora",x)
-  console.log("aqui",((x.length* 100) / data.length).toFixed(2))
-  console.log("ahora aqui",data.length)
-  return ((x.length* 100) / data.length).toFixed(2)
-
-
-  }
-   /*const computeStats = (poke) => {
-const totalDePokemon = poke.length
-const totalPokeAgua = filterType("water",poke ).length
-
-console.log(totalDePokemon)
-
-
-
-  console.log(totalPokeAgua)*/
-
-
-
-
-
-
-
-
-//separarlas por color 
-//recorer la data y hacer includes de type
-
-//sacar porcentaje de cuantas hay por color en relacion al total
-// una regla de 3 = 
-
+  return ((x.length * 100) / data.length).toFixed(2)
+}
+  
