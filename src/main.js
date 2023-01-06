@@ -58,6 +58,19 @@ displeyCard(ordenData)
 
 });
 
+const displayList = document.getElementById("tablaListaPorcentaje")
+  tablaListaPorcentaje = document.createElement("table")
+;
+const displayEstadistica = ()=> {
+  displayList.innerHTML = ` `;
+
+
+};
+
+
+  
+
+
 //compute
 const computeStats = (poke) => {
 const totalDePokemon = poke.length
@@ -78,6 +91,7 @@ const totalPokeNormal = ((filterType("normal",poke ).length * 100) / totalDePoke
 const totalPokeBicho = ((filterType("bug",poke ).length * 100) / totalDePokemon).toFixed(2);
 const totalPokeVolador = ((filterType("flying",poke ).length * 100) / totalDePokemon).toFixed(4);
 const totalPokeHada = ((filterType("fairy",poke ).length * 100) / totalDePokemon).toFixed(2);
+const totalPokeDragon = ((filterType("dragon",poke ).length * 100) / totalDePokemon).toFixed(2);
 
 console.log("aquiTierra",totalPokeTierra)
 console.log("aquiAgua",totalPokeAgua)
@@ -96,7 +110,11 @@ console.log("aquiNormal",totalPokeNormal)
 console.log("aquiBug",totalPokeBicho)
 console.log("aquiFlying",totalPokeVolador)
 console.log("aquiFairy",totalPokeHada)
-}
+console.log("aquiDragon",totalPokeDragon)
+};
+
+
+
 
 computeStats (dataPokemon)
 
