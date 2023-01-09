@@ -1,7 +1,7 @@
-import {filterData} from '../src/data.js';
+import {filterData, sortData, computeStats} from '../src/data.js';
 
 const arrayEntrada = [
-  { name: 'Bulbasaur', type: ['grass', 'poison'], num: 1 },
+  { name: 'bulbasaur', type: ['grass', 'poison'], num: 1 },
   { name: 'pikachu', type: ['electric'], num: 25 },
   { name: 'psyduck', type: ['water'], num: 54 },
   { name: 'charmander', type: ['fire'], num: 4 },
@@ -11,14 +11,8 @@ const arrayEntrada = [
   { name: 'charizard', type: ['fire', 'flying'], num: 6 },
 ]
 
-/*const fuegoSalida = [
-  { name: 'charmander', type: ['fire'], num: 4 },
-  { name: 'charmeleon', type: ['fire'], num: 5 },
-  { name: 'charizard', type: ['fire', 'flying'], num: 6 },
-]*/
-
 const genUnoSalida = [
-  { name: 'Bulbasaur', type: ['grass', 'poison'], num: 1 },
+  { name: 'bulbasaur', type: ['grass', 'poison'], num: 1 },
   { name: 'pikachu', type: ['electric'], num: 25 },
   { name: 'psyduck', type: ['water'], num: 54 },
   { name: 'charmander', type: ['fire'], num: 4 },
@@ -31,8 +25,8 @@ const genDosSalida = [
   { name: 'chinchou', type: ['water', 'electric'], num: 170 },
 ]
 
-/*onst azSalida = [
-  { name: 'Bulbasaur', type: ['grass', 'poison'], num: 1 },
+const azSalida = [
+  { name: 'bulbasaur', type: ['grass', 'poison'], num: 1 },
   { name: 'charizard', type: ['fire', 'flying'], num: 6 },
   { name: 'charmander', type: ['fire'], num: 4 },
   { name: 'charmeleon', type: ['fire'], num: 5 },
@@ -50,30 +44,51 @@ const zaSalida = [
   { name: 'charmeleon', type: ['fire'], num: 5 },
   { name: 'charmander', type: ['fire'], num: 4 },
   { name: 'charizard', type: ['fire', 'flying'], num: 6 },
-  { name: 'Bulbasaur', type: ['grass', 'poison'], num: 1 },
+  { name: 'bulbasaur', type: ['grass', 'poison'], num: 1 },
 
-]*/
+]
 
+const estadisticaSalida = "25.00"
 
+//Test filterData
 
-describe('pruebas para la función filterData', () => {
+describe('Pruebas para la función filterData', () => {
 
-  it('debe retornar un arreglo con gen-1', () => {
+  it('Debe retornar un arreglo con gen-1', () => {
     expect(filterData(arrayEntrada, "gen-1")).toEqual(genUnoSalida);
   });
-  it('debe retornar un arreglo con gen-2', () => {
+  it('Debe retornar un arreglo con gen-2', () => {
     expect(filterData(arrayEntrada, "gen-2")).toEqual(genDosSalida);
   });
 
 });
 
+//Test sortData
 
-/*describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+describe('Pruebas para la función sortData', () => {
+  
+  it('Debe retornar un arreglo con la data ordenada de forma ascendente A-Z', () => {
+    expect(sortData(arrayEntrada, 'name', 'ASC')).toEqual(azSalida);
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('Debe retornar un arreglo con la data ordenada de forma descendente Z-A', () => {
+    expect(sortData(arrayEntrada, 'name', 'DESC')).toEqual(zaSalida);
   });
-});*/
+
+});
+
+//Test computeStats
+
+describe ('Prueba para la función computeStats ', () => {
+  it('debe ser una función', () => {
+    expect(typeof computeStats ).toBe('function');
+  });
+});
+
+describe('Prueba para la función computeStats', () => {
+
+  it('Debe retornar un número que contenga el porcentaje de tipo agua', () => {
+    expect(computeStats('water',arrayEntrada)).toEqual(estadisticaSalida);
+  });
+});
+
