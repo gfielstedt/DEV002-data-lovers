@@ -1,10 +1,6 @@
 
 import data from './data/pokemon/pokemon.js';
-import {
-  filterData,
-  sortData,
-  computeStats
-} from './data.js';
+import {filterData,sortData,computeStats} from './data.js';
 //console.log("example esto es la data", data);//
 
 //mostrar
@@ -48,7 +44,7 @@ displeyCard(dataPokemon)
 
 //selectGeneration
 const selectGeneration = document.getElementById('select-generation')
-selectGeneration.addEventListener('change', (event) => {
+selectGeneration.addEventListener('change', () => {
   const data = filterData(dataPokemon, selectGeneration.value)
   displeyCard(data)
 
@@ -56,7 +52,7 @@ selectGeneration.addEventListener('change', (event) => {
 
 //selectOrder
 const selectOrder = document.getElementById("select-order");
-selectOrder.addEventListener("change", (event) => {
+selectOrder.addEventListener("change", () => {
   const ordenData = sortData(dataPokemon, "name", selectOrder.value)
   displeyCard(ordenData)
 

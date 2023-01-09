@@ -1,6 +1,6 @@
 //filter
 
-import pokemon from "./data/pokemon/pokemon.js";
+/*import data from "./data/pokemon/pokemon.js";*/
 
 export const filterData = (data,condition) => {
   if (condition== "gen-1") {
