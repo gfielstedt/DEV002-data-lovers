@@ -1,7 +1,5 @@
 //filter
 
-/*import data from "./data/pokemon/pokemon.js";*/
-
 export const filterData = (data,condition) => {
   if (condition== "gen-1") {
     return data.filter((data) => {
