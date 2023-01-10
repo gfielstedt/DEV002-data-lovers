@@ -7,9 +7,9 @@ import {filterData,sortData,computeStats} from './data.js';
 const cardsContainer = document.getElementById("cardsContainer")
 const dataPokemon = data.pokemon
 const displeyCard = (d) => {
-  cardsContainer.innerHTML = `<div class="cardvacia"></div> `;
+  cardsContainer.innerHTML = ``;
   d.forEach(element => {
-    //console.log(element);
+    
     const cardPokemon = document.createElement("div")
     cardPokemon.innerHTML += `
      <section class= "flex-cont"> 
