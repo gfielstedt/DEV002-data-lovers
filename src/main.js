@@ -7,7 +7,7 @@ import {filterData,sortData,computeStats} from './data.js';
 const cardsContainer = document.getElementById("cardsContainer")
 const dataPokemon = data.pokemon
 const displeyCard = (d) => {
-  cardsContainer.innerHTML = ``;
+  cardsContainer.innerHTML = ` <div class="cardvacia"></div> `;
   d.forEach(element => {
     
     const cardPokemon = document.createElement("div")
