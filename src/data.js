@@ -51,4 +51,4 @@ export const computeStats = (type,data) =>{
   const x = data.filter(element => element.type.includes(type))
   return ((x.length * 100) / data.length).toFixed(2)
 }
-  
+ //fin 
